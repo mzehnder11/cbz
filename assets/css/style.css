@@ -113,12 +113,14 @@ header .container {
 }
 
 .logo {
-    font-size: 1.2rem;
-    font-weight: 600;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--heading-color);
-    /* Removed border for minimalism */
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 45px;
+    width: auto;
+    display: block;
 }
 
 .desktop-nav ul {
