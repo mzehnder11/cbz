@@ -5,23 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Über Mich - Benjamin Zehnder</title>
+    <meta name="description"
+        content="Lernen Sie Benjamin Zehnder kennen, Fachpsychologe für Psychotherapie FSP in Bern. Erfahren Sie mehr über seinen Werdegang und seine Arbeitsweise.">
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 
 <body>
+    <a href="#main-content" class="skip-link">Direkt zum Inhalt springen</a>
 
     <header>
         <div class="container">
             <div class="logo">
-                <a href="../index.html">BZ</a>
+                <a href="../index.html" aria-label="Benjamin Zehnder Home">BZ</a>
             </div>
-            <div class="mobile-toggle">☰</div>
-            <nav class="desktop-nav">
+            <button class="mobile-toggle" aria-label="Menü öffnen" aria-expanded="false"
+                aria-controls="main-nav">☰</button>
+            <nav class="desktop-nav" id="main-nav" aria-label="Hauptnavigation">
                 <ul>
                     <li><a href="../index.html">Home</a></li>
                     <li><a href="../psychotherapie/">Psychotherapie</a></li>
                     <li><a href="../berufsberatung/">Berufsberatung</a></li>
-                    <li><a href="./" class="active">Über Mich</a></li>
+                    <li><a href="./" class="active" aria-current="page">Über Mich</a></li>
                     <li><a href="../kontakt/">Kontakt</a></li>
                 </ul>
             </nav>
@@ -30,12 +34,12 @@
 
     <div class="container" style="margin-top: 60px;">
         <h1>Über Mich</h1>
-        <div class="hero-image"
+        <div class="hero-image" role="img" aria-label="Porträt von Benjamin Zehnder"
             style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=1974'); height: 300px; margin-bottom: 60px;">
         </div>
     </div>
 
-    <main class="container">
+    <main class="container" id="main-content">
         <div class="content-grid">
             <div class="main-content">
                 <h2>Benjamin Zehnder</h2>

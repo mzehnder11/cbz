@@ -4,9 +4,12 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (toggle && nav) {
         toggle.addEventListener('click', () => {
-            nav.classList.toggle('open');
+            const isOpen = nav.classList.toggle('open');
+            // Update accessibility state
+            toggle.setAttribute('aria-expanded', isOpen);
+            toggle.setAttribute('aria-label', isOpen ? 'Menü schließen' : 'Menü öffnen');
             // Change icon simply
-            toggle.textContent = nav.classList.contains('open') ? '✕' : '☰';
+            toggle.textContent = isOpen ? '✕' : '☰';
         });
     }
 });

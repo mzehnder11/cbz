@@ -5,18 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Impressum - Benjamin Zehnder</title>
+    <meta name="robots" content="noindex">
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 
 <body>
+    <a href="#main-content" class="skip-link">Direkt zum Inhalt springen</a>
 
     <header>
         <div class="container">
             <div class="logo">
-                <a href="../index.html">BZ</a>
+                <a href="../index.html" aria-label="Benjamin Zehnder Home">BZ</a>
             </div>
-            <div class="mobile-toggle">☰</div>
-            <nav class="desktop-nav">
+            <button class="mobile-toggle" aria-label="Menü öffnen" aria-expanded="false"
+                aria-controls="main-nav">☰</button>
+            <nav class="desktop-nav" id="main-nav" aria-label="Hauptnavigation">
                 <ul>
                     <li><a href="../index.html">Home</a></li>
                     <li><a href="../psychotherapie/">Psychotherapie</a></li>
@@ -28,7 +31,7 @@
         </div>
     </header>
 
-    <main class="container" style="padding-top: 80px;">
+    <main class="container" id="main-content" style="padding-top: 80px;">
         <h1>Impressum</h1>
 
         <div class="content-section" style="max-width: 800px; margin-top: 40px;">
