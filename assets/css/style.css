@@ -69,10 +69,15 @@ a:hover {
     color: var(--heading-color);
 }
 
-a:focus,
-button:focus {
+a:focus-visible,
+button:focus-visible {
     outline: 2px solid var(--accent-color);
     outline-offset: 4px;
+}
+
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible) {
+    outline: none;
 }
 
 .skip-link {
