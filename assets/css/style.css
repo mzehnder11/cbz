@@ -137,6 +137,10 @@ header .container {
     color: #000;
 }
 
+.desktop-nav a.active {
+    font-weight: 700;
+}
+
 /* Mobile Nav Toggle */
 .mobile-toggle {
     display: none;
@@ -308,7 +312,7 @@ footer {
 }
 
 /* Mobile Responsive */
-@media (max-width: 800px) {
+@media (max-width: 1024px) {
     :root {
         --spacing-unit: 20px;
     }
