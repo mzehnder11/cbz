@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
 
 :root {
-    --bg-color: #fdfcfb;
+    --bg-color: #ffffff;
     /* Very light cream/off-white */
     --text-color: #4a4a4a;
     /* Softer black */
@@ -146,6 +146,18 @@ header .container {
 
 .desktop-nav a.active {
     font-weight: 700;
+}
+
+/* Scroll Reveal */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Mobile Nav Toggle */
@@ -368,6 +380,38 @@ footer {
         flex-direction: column;
         align-items: center;
         gap: 30px;
+    }
+
+    .desktop-nav li {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .desktop-nav.open li {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Staggered Delay for Menu Items */
+    .desktop-nav.open li:nth-child(1) {
+        transition-delay: 0.1s;
+    }
+
+    .desktop-nav.open li:nth-child(2) {
+        transition-delay: 0.2s;
+    }
+
+    .desktop-nav.open li:nth-child(3) {
+        transition-delay: 0.3s;
+    }
+
+    .desktop-nav.open li:nth-child(4) {
+        transition-delay: 0.4s;
+    }
+
+    .desktop-nav.open li:nth-child(5) {
+        transition-delay: 0.5s;
     }
 
     .desktop-nav a {
