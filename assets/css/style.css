@@ -1,3 +1,15 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
 
 :root {
@@ -471,7 +483,7 @@ footer {
     .desktop-nav {
         position: fixed;
         top: 0;
-        right: -100%;
+        right: 0;
         width: 100%;
         height: 100vh;
         background: var(--bg-color);
@@ -479,11 +491,12 @@ footer {
         display: flex;
         align-items: center;
         justify-content: center;
-        transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+        transform: translateX(100%);
+        transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1);
     }
 
     .desktop-nav.open {
-        right: 0;
+        transform: translateX(0);
     }
 
     .desktop-nav ul {
