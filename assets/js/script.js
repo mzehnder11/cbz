@@ -34,6 +34,33 @@ document.addEventListener('DOMContentLoaded', () => {
     const revealElements = document.querySelectorAll('.reveal');
     revealElements.forEach(el => observer.observe(el));
 
+    // Header Scroll Animation
+    const header = document.querySelector('header');
+    let lastScrollY = window.scrollY;
+    const scrollThreshold = 100; // Only hide after scrolling down this much
+
+    window.addEventListener('scroll', () => {
+        const currentScrollY = window.scrollY;
+
+        // Add class when scrolled down to shrink header/add shadow
+        if (currentScrollY > 50) {
+            header.classList.add('header--scrolled');
+        } else {
+            header.classList.remove('header--scrolled');
+        }
+
+        // Show/Hide based on scroll direction
+        if (currentScrollY > lastScrollY && currentScrollY > scrollThreshold) {
+            // Scrolling down
+            header.classList.add('header--hidden');
+        } else {
+            // Scrolling up
+            header.classList.remove('header--hidden');
+        }
+
+        lastScrollY = currentScrollY;
+    });
+
     // Update Copyright Year
     const copyrightElement = document.querySelector('.copyright');
     if (copyrightElement) {
