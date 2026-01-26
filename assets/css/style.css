@@ -111,8 +111,10 @@ header {
     left: 0;
     width: 100%;
     z-index: 1000;
-    background-color: var(--bg-color);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease, padding 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease, padding 0.3s ease, background-color 0.3s ease;
 }
 
 header.header--hidden {
