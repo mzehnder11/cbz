@@ -7,11 +7,29 @@ document.addEventListener('DOMContentLoaded', () => {
         toggle.addEventListener('click', () => {
             const isOpen = nav.classList.toggle('open');
             toggle.setAttribute('aria-expanded', isOpen);
-            toggle.setAttribute('aria-label', isOpen ? 'Menü schließen' : 'Menü öffnen');
-            toggle.textContent = isOpen ? '✕' : '☰';
 
             // Prevent scrolling when menu is open
             document.body.style.overflow = isOpen ? 'hidden' : '';
+
+            // Close submenus when closing the main menu
+            if (!isOpen) {
+                document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('expanded'));
+            }
+        });
+
+        // Mobile Dropdown Toggle Logic
+        const dropdownLinks = document.querySelectorAll('.desktop-nav .dropdown > a');
+        dropdownLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                // Mobile check - detect if the toggle button is visible
+                const isMobile = window.getComputedStyle(toggle).display !== 'none';
+
+                if (isMobile) {
+                    e.preventDefault();
+                    const parent = link.parentElement;
+                    parent.classList.toggle('expanded');
+                }
+            });
         });
     }
 
