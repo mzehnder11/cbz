@@ -27,6 +27,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (isMobile) {
                     e.preventDefault();
                     const parent = link.parentElement;
+                    
+                    // Close other dropdowns
+                    document.querySelectorAll('.dropdown').forEach(d => {
+                        if (d !== parent) d.classList.remove('expanded');
+                    });
+                    
                     parent.classList.toggle('expanded');
                 }
             });
