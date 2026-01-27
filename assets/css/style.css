@@ -18,7 +18,7 @@ body {
     --text-color: #4a4a4a;
     /* Softer black */
     --heading-color: #222;
-    --accent-color: #b5a995;
+    --accent-color: #222;
     /* Muted taupe/beige */
     --nav-color: #666;
     --container-width: 1000px;
@@ -641,6 +641,97 @@ footer {
 
 .price-list li:last-child {
     border-bottom: none;
+}
+
+/* FAQ Accordion */
+.faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.faq-item {
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    background: #fff;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.faq-item.active {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    border-color: transparent;
+}
+
+.faq-question {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-family: inherit;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--heading-color);
+    transition: color 0.3s ease;
+}
+
+.faq-question:hover {
+    color: var(--accent-color);
+}
+
+.faq-question .icon-plus {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    margin-left: 20px;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    stroke: var(--accent-color);
+}
+
+.faq-item.active .icon-plus {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    padding: 0 30px 25px 30px;
+    color: var(--text-color);
+    font-size: 1rem;
+    line-height: 1.7;
+    display: none;
+    /* Controlled via JS, but good default */
+}
+
+/* When not hidden (JS control) */
+.faq-answer:not([hidden]) {
+    display: block;
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .faq-question {
+        padding: 20px;
+        font-size: 1rem;
+    }
+
+    .faq-answer {
+        padding: 0 20px 20px 20px;
+    }
 }
 
 /* Mobile Responsive */

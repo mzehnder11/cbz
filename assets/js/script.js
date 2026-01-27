@@ -27,12 +27,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (isMobile) {
                     e.preventDefault();
                     const parent = link.parentElement;
-                    
+
                     // Close other dropdowns
                     document.querySelectorAll('.dropdown').forEach(d => {
                         if (d !== parent) d.classList.remove('expanded');
                     });
-                    
+
                     parent.classList.toggle('expanded');
                 }
             });
@@ -91,4 +91,33 @@ document.addEventListener('DOMContentLoaded', () => {
         const currentYear = new Date().getFullYear();
         copyrightElement.innerHTML = copyrightElement.innerHTML.replace(/\d{4}/, currentYear);
     }
+
+    // FAQ Accordion Logic
+    const faqButtons = document.querySelectorAll('.faq-question');
+    faqButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const answer = button.nextElementSibling;
+            const item = button.parentElement;
+            const isExpanded = button.getAttribute('aria-expanded') === 'true';
+
+            // Close all others (optional - for accordion behavior)
+            document.querySelectorAll('.faq-question').forEach(otherBtn => {
+                if (otherBtn !== button) {
+                    otherBtn.setAttribute('aria-expanded', 'false');
+                    otherBtn.nextElementSibling.hidden = true;
+                    otherBtn.parentElement.classList.remove('active');
+                }
+            });
+
+            // Toggle current
+            button.setAttribute('aria-expanded', !isExpanded);
+            answer.hidden = isExpanded;
+
+            if (!isExpanded) {
+                item.classList.add('active');
+            } else {
+                item.classList.remove('active');
+            }
+        });
+    });
 });
