@@ -207,6 +207,7 @@ header .container {
     display: inline-block;
     stroke-width: 3px;
     transform-origin: center center;
+    transform: rotate(0deg);
 }
 
 .desktop-nav .dropdown:hover .chevron-icon {
@@ -708,6 +709,11 @@ footer {
         justify-content: center;
     }
 
+    /* Disable hover color change on mobile for dropdown trigger */
+    .desktop-nav .dropdown:hover>a {
+        color: var(--nav-color);
+    }
+
     .desktop-nav .dropdown>a::after {
         display: none;
     }
@@ -719,7 +725,16 @@ footer {
         transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
+    /* Disable hover rotation on mobile to prevent persistent rotation after tap */
+    .desktop-nav .dropdown:hover .chevron-icon {
+        transform: rotate(0deg);
+    }
+
     .desktop-nav .dropdown.expanded .chevron-icon {
+        transform: rotate(90deg);
+    }
+
+    .desktop-nav .dropdown.expanded:hover .chevron-icon {
         transform: rotate(90deg);
     }
 
