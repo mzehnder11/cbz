@@ -203,13 +203,14 @@ header .container {
     width: 14px;
     height: 14px;
     margin-left: 6px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     display: inline-block;
     stroke-width: 3px;
+    transform-origin: center center;
 }
 
 .desktop-nav .dropdown:hover .chevron-icon {
-    transform: translateX(3px);
+    transform: rotate(90deg);
 }
 
 /* Invisible bridge to prevent menu from closing */
