@@ -191,8 +191,8 @@ header .container {
 
 .desktop-nav .dropdown>a {
     cursor: pointer;
-    display: flex;
-    align-items: center;
+    display: inline-flex;
+    align-items: baseline;
 }
 
 .desktop-nav .dropdown>a::after {
