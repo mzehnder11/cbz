@@ -960,23 +960,24 @@ footer {
         border-radius: 0;
     }
 }
+
 /* AI Chat Section */
 .cbz-chat-section {
     margin-top: 100px;
     margin-bottom: 60px;
     padding: 60px 0;
     background-color: #fcfcfc;
-    border-top: 1px solid rgba(0,0,0,0.05);
-    border-bottom: 1px solid rgba(0,0,0,0.05);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .cbz-chat-container {
     max-width: 800px;
     margin: 0 auto;
     background: #fff;
-    border: 1px solid rgba(0,0,0,0.08);
+    border: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: 8px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -985,7 +986,7 @@ footer {
 
 .cbz-chat-header {
     padding: 20px 30px;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     background: #fff;
     display: flex;
     align-items: center;
@@ -1038,7 +1039,7 @@ footer {
 .cbz-message.assistant {
     align-self: flex-start;
     background-color: #fff;
-    border: 1px solid rgba(0,0,0,0.08);
+    border: 1px solid rgba(0, 0, 0, 0.08);
     color: var(--text-color);
     border-bottom-left-radius: 2px;
 }
@@ -1050,7 +1051,7 @@ footer {
 .cbz-chat-input-area {
     padding: 20px 30px;
     background: #fff;
-    border-top: 1px solid rgba(0,0,0,0.05);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
     display: flex;
     gap: 15px;
     align-items: flex-end;
@@ -1058,13 +1059,15 @@ footer {
 
 .cbz-chat-input {
     flex: 1;
-    border: 1px solid rgba(0,0,0,0.1);
-    border-radius: 4px; /* Matches other inputs */
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    /* Matches other inputs */
     padding: 15px;
     font-family: inherit;
     font-size: 1rem;
     resize: none;
-    height: 54px; /* Initial height */
+    height: 54px;
+    /* Initial height */
     max-height: 120px;
     transition: border-color 0.2s;
     outline: none;
@@ -1087,8 +1090,10 @@ footer {
     cursor: pointer;
     transition: background-color 0.2s, transform 0.1s;
     padding: 0;
-    min-width: auto; /* Override general button styles */
-    margin-top: 0; /* Override general button styles */
+    min-width: auto;
+    /* Override general button styles */
+    margin-top: 0;
+    /* Override general button styles */
 }
 
 .cbz-chat-send:hover {
@@ -1108,7 +1113,7 @@ footer {
     gap: 4px;
     padding: 10px 15px;
     background: #fff;
-    border: 1px solid rgba(0,0,0,0.08);
+    border: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: 12px;
     align-self: flex-start;
     border-bottom-left-radius: 2px;
@@ -1123,10 +1128,23 @@ footer {
     animation: bounce 1.4s infinite ease-in-out both;
 }
 
-.cbz-typing-dot:nth-child(1) { animation-delay: -0.32s; }
-.cbz-typing-dot:nth-child(2) { animation-delay: -0.16s; }
+.cbz-typing-dot:nth-child(1) {
+    animation-delay: -0.32s;
+}
+
+.cbz-typing-dot:nth-child(2) {
+    animation-delay: -0.16s;
+}
 
 @keyframes bounce {
-    0%, 80%, 100% { transform: scale(0); }
-    40% { transform: scale(1); }
+
+    0%,
+    80%,
+    100% {
+        transform: scale(0);
+    }
+
+    40% {
+        transform: scale(1);
+    }
 }
