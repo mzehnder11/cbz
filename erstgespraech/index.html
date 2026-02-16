@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erstgespräch vereinbaren - BZ Coaching</title>
+    <meta name="description"
+        content="Vereinbaren Sie ein unverbindliches Erstgespräch mit Benjamin Zehnder. Gemeinsam klären wir Ihr Anliegen für Business Coaching oder Standortbestimmung in Bern.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        .radio-group-container label {
+            position: static !important;
+            pointer-events: auto !important;
+            transform: none !important;
+            padding: 0 !important;
+            background: transparent !important;
+            color: var(--text-color) !important;
+            font-family: inherit !important;
+            font-size: 1rem !important;
+            text-transform: none !important;
+            letter-spacing: normal !important;
+            display: flex !important;
+            align-items: center !important;
+            gap: 12px !important;
+            cursor: pointer !important;
+            margin: 0 !important;
+        }
+
+        .radio-group-container input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 1px solid #00000040;
+            border-radius: 4px;
+            background: #fff;
+            position: relative;
+            cursor: pointer;
+            margin: 0;
+            padding: 0;
+            display: block;
+            flex-shrink: 0;
+        }
+
+        .radio-group-container input[type="radio"]:checked {
+            border-color: var(--accent-color);
+        }
+
+        .radio-group-container input[type="radio"]:checked::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 10px;
+            height: 10px;
+            background: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        .radio-group-container p {
+            margin-bottom: 15px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #999;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Direkt zum Inhalt springen</a>
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html" aria-label="Benjamin Zehnder Home"><img src="../assets/img/Logo_Gross.webp"
+                        alt="Benjamin Zehnder Coaching Logo"></a>
+            </div>
+            <button class="mobile-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="main-nav">
+                <span></span>
+            </button>
+            <nav class="desktop-nav" id="main-nav" aria-label="Hauptnavigation">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#">Angebote <svg class="chevron-icon" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg></a>
+                        <ul class="submenu">
+                            <li><a href="../fuehrungscoaching/">Führungscoaching</a></li>
+                            <li><a href="../standortbestimmung/">Standortbestimmung</a></li>
+                            <li><a href="../finanzielles/">Finanzielles</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../ueber-mich/">Über Mich</a></li>
+                    <li><a href="../kontakt/">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container reveal" style="margin-top: 60px;">
+        <h1>Erstgespräch vereinbaren</h1>
+    </div>
+
+    <main class="container" id="main-content">
+        <div style="max-width: 800px;">
+            <div class="main-content reveal">
+                <form action="https://formspree.io/f/mpqjpdny" method="post" class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" id="vorname" name="vorname" placeholder=" " required>
+                            <label for="vorname">Vorname *</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="nachname" name="nachname" placeholder=" " required>
+                            <label for="nachname">Nachname *</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group radio-group-container"
+                        style="border: none; margin-bottom: 30px; padding: 0 20px;">
+                        <p>Wie möchte ich kontaktiert werden? *</p>
+                        <div style="display: flex; gap: 40px; align-items: center;">
+                            <label>
+                                <input type="radio" name="kontaktweg" value="E-Mail" checked required> E-Mail
+                            </label>
+                            <label>
+                                <input type="radio" name="kontaktweg" value="Telefonisch"> Telefonisch
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder=" " required>
+                            <label for="email" id="email-label">E-Mail *</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="telefon" name="telefon" placeholder=" ">
+                            <label for="telefon" id="telefon-label">Telefon</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" id="betreff" name="betreff" value="Anfrage Erstgespräch" placeholder=" "
+                            required>
+                        <label for="betreff">Betreff *</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="6" placeholder=" " required></textarea>
+                        <label for="message">Nachricht *</label>
+                    </div>
+                    <button type="submit">Anfrage senden</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <nav class="footer-nav-expanded">
+                <a href="../index.html">Home</a>
+                <a href="../fuehrungscoaching/">Führungscoaching</a>
+                <a href="../standortbestimmung/">Standortbestimmung</a>
+                <a href="../finanzielles/">Finanzielles</a>
+                <a href="../ueber-mich/">Über Mich</a>
+                <a href="../kontakt/">Kontakt</a>
+                <a href="../impressum/">Impressum</a>
+            </nav>
+            <div class="copyright">
+                &copy; 2026 Benjamin Zehnder. Alle Rechte vorbehalten.
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const message = document.getElementById('message');
+            const vornameInput = document.getElementById('vorname');
+            const nachnameInput = document.getElementById('nachname');
+            const emailInput = document.getElementById('email');
+            const telefonInput = document.getElementById('telefon');
+            const emailLabel = document.getElementById('email-label');
+            const telefonLabel = document.getElementById('telefon-label');
+            const radioButtons = document.querySelectorAll('input[name="kontaktweg"]');
+
+            // 1. Automatische Nachricht aktualisieren
+            function updateMessage() {
+                const vorname = vornameInput.value.trim();
+                const nachname = nachnameInput.value.trim();
+                const nameStr = (vorname || nachname) ? (vorname + ' ' + nachname).trim() : '';
+                message.value = `Guten Tag Herr Zehnder\n\nBitte kontaktieren Sie mich für ein Erstgespräch. \n\nFreundliche Grüsse\n${nameStr}`;
+            }
+
+            vornameInput.addEventListener('input', updateMessage);
+            nachnameInput.addEventListener('input', updateMessage);
+            updateMessage(); // Initialer Aufruf
+
+            // 2. Pflichtfelder dynamisch anpassen
+            radioButtons.forEach(radio => {
+                radio.addEventListener('change', () => {
+                    if (radio.value === 'Telefonisch') {
+                        telefonInput.required = true;
+                        if (telefonLabel) telefonLabel.textContent = 'Telefon *';
+                        emailInput.required = false;
+                        if (emailLabel) emailLabel.textContent = 'E-Mail';
+                    } else {
+                        telefonInput.required = false;
+                        if (telefonLabel) telefonLabel.textContent = 'Telefon';
+                        emailInput.required = true;
+                        if (emailLabel) emailLabel.textContent = 'E-Mail *';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

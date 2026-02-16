@@ -422,6 +422,10 @@ header .container {
     font-size: 0.95rem;
 }
 
+.sidebar a:hover {
+    text-decoration: underline;
+}
+
 .social-link {
     display: inline-flex;
     flex-direction: column;
