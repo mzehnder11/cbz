@@ -120,4 +120,45 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Floating Label Logic: detect content to keep labels floating
+    const formInputs = document.querySelectorAll('.form-group input, .form-group textarea');
+    
+    function checkInputContent(input) {
+        const parent = input.closest('.form-group');
+        if (!parent) return;
+        
+        if (input.value && input.value.trim() !== '') {
+            parent.classList.add('has-value');
+        } else {
+            parent.classList.remove('has-value');
+        }
+    }
+
+    formInputs.forEach(input => {
+        // Check initially
+        checkInputContent(input);
+
+        // Check on input/change
+        input.addEventListener('input', () => checkInputContent(input));
+        input.addEventListener('change', () => checkInputContent(input));
+        
+        // Also check on transition start (sometimes needed for autofill)
+        input.addEventListener('animationstart', (e) => {
+            if (e.animationName === 'onAutoFillStart') checkInputContent(input);
+        });
+    });
+
+    // Mutation Observer to watch for value changes via JS (e.g. on the Erstgespräch page)
+    const observer_val = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+            if (mutation.type === 'attributes' && (mutation.attributeName === 'value' || mutation.target.tagName === 'TEXTAREA')) {
+                checkInputContent(mutation.target);
+            }
+        });
+    });
+
+    formInputs.forEach(input => {
+        observer_val.observe(input, { attributes: true });
+    });
 });

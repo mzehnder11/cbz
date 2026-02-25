@@ -137,11 +137,27 @@
                 const nachname = nachnameInput.value.trim();
                 const nameStr = (vorname || nachname) ? (vorname + ' ' + nachname).trim() : '';
                 message.value = `Guten Tag Herr Zehnder\n\nBitte kontaktieren Sie mich für ein Erstgespräch. \n\nFreundliche Grüsse\n${nameStr}`;
+
+                // Trigger label floating
+                if (message.parentElement) {
+                    if (message.value.trim() !== '') {
+                        message.parentElement.classList.add('has-value');
+                    } else {
+                        message.parentElement.classList.remove('has-value');
+                    }
+                }
             }
 
             vornameInput.addEventListener('input', updateMessage);
             nachnameInput.addEventListener('input', updateMessage);
             updateMessage(); // Initialer Aufruf
+
+            // Initial check for all fields on this page (like Betreff with default value)
+            document.querySelectorAll('.form-group input, .form-group textarea').forEach(input => {
+                if (input.value && input.value.trim() !== '') {
+                    input.parentElement.classList.add('has-value');
+                }
+            });
 
             // 2. Pflichtfelder dynamisch anpassen
             radioButtons.forEach(radio => {
@@ -153,10 +169,17 @@
                         if (emailLabel) emailLabel.textContent = 'E-Mail';
                     } else {
                         telefonInput.required = false;
-                        if (telefonLabel) telefonLabel.textContent = 'Telefon';
-                        emailInput.required = true;
                         if (emailLabel) emailLabel.textContent = 'E-Mail *';
+                        emailInput.required = true;
+                        if (telefonLabel) telefonLabel.textContent = 'Telefon';
                     }
+
+                    // Re-check labels for these fields after requirement change/label change
+                    [emailInput, telefonInput].forEach(input => {
+                        if (input.value && input.value.trim() !== '') {
+                            input.parentElement.classList.add('has-value');
+                        }
+                    });
                 });
             });
         });

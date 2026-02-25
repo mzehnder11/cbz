@@ -647,13 +647,16 @@ header .container {
 }
 
 /* Floating Label Logic */
+.form-group.has-value label,
 .form-group input:focus+label,
 .form-group input:not(:placeholder-shown)+label,
 .form-group textarea:focus+label,
 .form-group textarea:not(:placeholder-shown)+label {
-    transform: translateY(-10px) scale(0.75);
+    transform: translateY(-28px) scale(0.75);
     color: var(--accent-color);
     font-weight: 600;
+    background-color: #fff;
+    /* Ensures the border behind the label is hidden */
 }
 
 .form-group input:focus,
