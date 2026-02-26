@@ -562,12 +562,12 @@ header .container {
 
     .form-group input,
     .form-group textarea {
-        padding: 24px 20px 8px 20px;
+        padding: 16px 20px 16px 20px;
         font-size: 1rem;
     }
 
     .form-group label {
-        top: 18px;
+        top: 16px;
         left: 20px;
         font-size: 1rem;
     }
@@ -618,7 +618,7 @@ header .container {
 .form-group input,
 .form-group textarea {
     width: 100%;
-    padding: 24px 20px 8px 20px;
+    padding: 16px 20px 16px 20px;
     border: none;
     /* No border as requested */
     background: transparent;
@@ -632,7 +632,7 @@ header .container {
 
 .form-group label {
     position: absolute;
-    top: 18px;
+    top: 16px;
     left: 20px;
     font-size: 1rem;
     color: #999;
